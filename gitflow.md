@@ -26,4 +26,4 @@ Branch protection rule:
   - Back-merges the release into 'develop'
   - Removes the release branch
 
-![git flow](/images/gitflow.drawio.png)
+![git flow](./images/gitflow.drawio.png)

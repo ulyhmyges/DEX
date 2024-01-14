@@ -2,7 +2,7 @@
 
 ## First draft
 
-![architecture](/images/architecture.png)
+![architecture](./images/architecture.png)
 
 ---
 
