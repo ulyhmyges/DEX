@@ -8,13 +8,38 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./Navbar";
 import ErrorPage from "./ErrorPage";
+import App from "./App";
+import Swap from "./Swap";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Navbar/>,
-        errorElement: <ErrorPage/>
-    },
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: "/",
+                element: <App/>
+            },
+            {
+                path: "swap",
+                element: <Swap/>
+            },
+            {
+                path: "tockens",
+                element: <h1>Tockens</h1>
+            },
+            {
+                path: "pools",
+                element: <h1>Pools</h1>
+            },
+            {
+                path: "connect",
+                element: <h1>Connect</h1>
+            },
+        ]
+    }
 ]);
 
 const root = ReactDOM.createRoot(

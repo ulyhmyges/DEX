@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, Outlet} from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -9,27 +10,28 @@ const Navbar = () => {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                    <Link className="nav-link active" aria-current="page" to={"/"}>
+                                        <img src={"bitcoin.png"} alt={"bitcoin icon"} width={"39px"} height={"21px"}/></Link>
                                 </button>
                             </li>
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <a className="nav-link active" aria-current="page" href="#">Swap</a>
+                                    <Link className="nav-link active" aria-current="page" to={"swap"}>Swap</Link>
                                 </button>
                             </li>
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <a className="nav-link active" href="#">Tockens</a>
+                                    <Link className="nav-link active" to={"tockens"}>Tockens</Link>
                                 </button>
                             </li>
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <a className="nav-link active" href="#">Pools</a>
+                                    <Link className="nav-link active" to={"pools"}>Pools</Link>
                                 </button>
                             </li>
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <a className="nav-link active" href="#">Connect</a>
+                                    <Link className="nav-link active" to={"connect"}>Connect</Link>
                                 </button>
                             </li>
                         </ul>
@@ -41,6 +43,10 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+            {/* All the other elements */}
+            <div id={"detail"}>
+                <Outlet />
+            </div>
         </div>
     );
 }
