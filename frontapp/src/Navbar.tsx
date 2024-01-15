@@ -10,8 +10,8 @@ const Navbar = () => {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <Link className="nav-link active" aria-current="page" to={"/"}>
-                                        <img src={"bitcoin.png"} alt={"bitcoin icon"} width={"39px"} height={"21px"}/></Link>
+                                    <Link className="nav-link active" aria-current="page" to={"home"}>
+                                        <img className="img-thumbnail rounded float-start" src={"bitcoin.png"} alt={"bitcoin icon"} width={"39px"} height={"29px"}/></Link>
                                 </button>
                             </li>
                             <li className="nav-item">
