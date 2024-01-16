@@ -8,10 +8,6 @@
 - Create branch **feature/docs** for documentation
 - Create branch **feature/create-frontend-project** to initialize the frontend part of the project
 
-### TODO
-
-H: Initialize the frontend project with the branch **feature/create-frontend-project**
-
 ## Monday 15th January 2024
 
 ### DONE
@@ -24,7 +20,17 @@ H: Initialize the frontend project with the branch **feature/create-frontend-pro
   - `npm install react-router-dom`
   - Adding Bootstrap in public/index.html file
 
-### TODO
+## Tuesday 16th January 2024
+
+### DONE
+
+- Create branch **feature/front-swap**
+- Create branch **feature/connectwallet**
+
+---
+
+## TODO
 
 - Component Swap to describe /swap route
-- Create branch **feature/front-swap** to realize component Swap
+- Switch to branch **feature/front-swap** to realize component Swap
+- Switch to branch **feature/connectwallet** to realize the feature to connect the wallet 
