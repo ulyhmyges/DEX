@@ -10,6 +10,7 @@ import Navbar from "./Navbar";
 import ErrorPage from "./ErrorPage";
 import App from "./App";
 import Swap from "./Swap";
+import ConnectWallet from "./ConnectWallet";
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "connect",
-                element: <h1>Connect</h1>
+                element: <ConnectWallet />
             },
         ]
     }
