@@ -26,7 +26,11 @@
 
 - Create branch **feature/front-swap**
 - Create branch **feature/connectwallet**
-
+  - ```sh
+    npm install ethers@5.7
+    npm install @metamask/detect-provider
+    ```
+  /connect route to connect the wallet
 ---
 
 ## TODO
