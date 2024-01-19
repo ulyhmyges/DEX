@@ -1,40 +1,12 @@
 # Overview
 
-## Friday 22nd December 2023
 
-### DONE
+## Roadmap
 
-- Create branch **develop** for development
-- Create branch **feature/docs** for documentation
-- Create branch **feature/create-frontend-project** to initialize the frontend part of the project
+- [x] Create branch **develop** for development
+- [x] Documentation for the project - branch **feature/docs** for documentation
+- [x] Initialize the frontend part of the project - branch **feature/create-frontend-project**
+- [ ] Connexion with the wallet - branch **feature/connectwallet**
+- [ ] Realize component Swap - branch **feature/front-swap**
+- [ ] Initialize the backend part
 
-## Monday 15th January 2024
-
-### DONE
-
-- Create branch **develop**
-- Create branch **feature/docs**
-- Initialize the frontend project with the branch **feature/create-frontend-project**
-
-  - `npx create-react-app frontapp --template typescript`
-  - `npm install react-router-dom`
-  - Adding Bootstrap in public/index.html file
-
-## Tuesday 16th January 2024
-
-### DONE
-
-- Create branch **feature/front-swap**
-- Create branch **feature/connectwallet**
-  - ```sh
-    npm install ethers@5.7
-    npm install @metamask/detect-provider
-    ```
-  /connect route to connect the wallet
----
-
-## TODO
-
-- Component Swap to describe /swap route
-- Switch to branch **feature/front-swap** to realize component Swap
-- Switch to branch **feature/connectwallet** to realize the feature to connect the wallet 
