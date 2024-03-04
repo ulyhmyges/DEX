@@ -21,7 +21,7 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <button className={"btn btn-light"}>
-                                    <Link className="nav-link active" to={"tockens"}>Tockens</Link>
+                                    <Link className="nav-link active" to={"tokens"}>Tokens</Link>
                                 </button>
                             </li>
                             <li className="nav-item">
