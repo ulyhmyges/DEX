@@ -28,8 +28,8 @@ const router = createBrowserRouter([
                 element: <Swap/>
             },
             {
-                path: "tockens",
-                element: <h1>Tockens</h1>
+                path: "tokens",
+                element: <h1>Tokens</h1>
             },
             {
                 path: "pools",
