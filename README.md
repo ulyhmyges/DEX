@@ -1,12 +1,22 @@
 # DEX
 
+## Purpose
+
 The aim of the project is to create a DEX for swap tokens, including fees, liquidy pools and staking
+
+## Installation
+
+The project is under construction.
+
+![under construction](./images/construction.png)
 
 ## Description
 
-[Architecture](/architecture.md)
+[Architecture](./architecture.md)
 
-[Git flow](/gitflow.md)
+[Git flow](./gitflow.md)
+
+[Roadmap](./todo.md)
 
 ### Frontend
 
@@ -34,4 +44,15 @@ The aim of the project is to create a DEX for swap tokens, including fees, liqui
     - Cloud DB
     - Sitemaps
 
-![under construction](/images/construction.png)
+
+## Contributing
+
+- [Malthus1111](https://github.com/Malthus1111)
+- [ulyhmyges](https://github.com/ulyhmyges) || ulyh
+
+
+## License
+
+Distributed under the GNU GENERAL PUBLIC LICENSE. See `LICENSE` for more information.
+
+
