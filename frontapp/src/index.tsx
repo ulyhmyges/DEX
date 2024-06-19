@@ -1,3 +1,4 @@
+// index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -11,7 +12,9 @@ import ErrorPage from "./ErrorPage";
 import App from "./App";
 import Swap from "./Swap";
 import ConnectWallet from "./ConnectWallet";
-
+import Tokens from "./Tokens";
+import Login from "./Login";
+import SignUp from "./SignUp";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "tokens",
-                element: <h1>Tokens</h1>
+                element: <Tokens/>
             },
             {
                 path: "pools",
@@ -38,6 +41,14 @@ const router = createBrowserRouter([
             {
                 path: "connect",
                 element: <ConnectWallet />
+            },
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "signup",
+                element: <SignUp />
             },
         ]
     }
