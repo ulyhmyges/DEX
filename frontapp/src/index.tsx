@@ -1,3 +1,4 @@
+// index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -11,7 +12,13 @@ import ErrorPage from "./ErrorPage";
 import App from "./App";
 import Swap from "./Swap";
 import ConnectWallet from "./ConnectWallet";
+<<<<<<< HEAD
 import Tokens from "./Tokens"; 
+=======
+import Tokens from "./Tokens";
+import Login from "./Login";
+import SignUp from "./SignUp";
+>>>>>>> feature/CRUD_utilisateur
 
 const router = createBrowserRouter([
     {
@@ -38,6 +45,14 @@ const router = createBrowserRouter([
             {
                 path: "connect",
                 element: <ConnectWallet />
+            },
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "signup",
+                element: <SignUp />
             },
         ]
     }
