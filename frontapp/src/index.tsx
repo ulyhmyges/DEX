@@ -11,7 +11,7 @@ import ErrorPage from "./ErrorPage";
 import App from "./App";
 import Swap from "./Swap";
 import ConnectWallet from "./ConnectWallet";
-
+import Tokens from "./Tokens"; 
 
 const router = createBrowserRouter([
     {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "tokens",
-                element: <h1>Tokens</h1>
+                element: <Tokens/>
             },
             {
                 path: "pools",
