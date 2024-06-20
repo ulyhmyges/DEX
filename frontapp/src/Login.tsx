@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { login } from './services/UserService'; // Importer le UserService
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -10,19 +11,9 @@ const Login = () => {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
-            });
-
-            if (!response.ok) {
-                throw new Error('Invalid credentials');
-            }
-
-            const data = await response.json();
+            const data = await login(username, password);
             localStorage.setItem('user', JSON.stringify(data));
-            navigate('/home');
+            navigate('/');
         } catch (err: any) {
             setError(err.message);
         }
