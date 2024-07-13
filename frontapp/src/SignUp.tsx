@@ -20,7 +20,9 @@ const SignUp = () => {
                 throw new Error('Username already taken');
             }
 
-            navigate('/login');
+            const data = await response.json();
+            localStorage.setItem('user', JSON.stringify(data));
+            navigate('/home');
         } catch (err: any) {
             setError(err.message);
         }

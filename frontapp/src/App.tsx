@@ -7,7 +7,7 @@ const App = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('user');
-        navigate('/login');
+        navigate('/home');
     };
 
     return (

@@ -96,7 +96,10 @@ func main() {
 	routes.UserRoutes(router)
 	routes.CapMarketRoutes(router)
 	Cap()
-
-	log.Println("Server running on port 8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	
+	err := http.ListenAndServe(":8080", router)
+	if err != nil {
+		log.Fatal("Failed to start the server: " + err.Error())
+	}
+	log.Println("Server running on port 8080...")
 }
