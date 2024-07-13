@@ -12,13 +12,9 @@ import ErrorPage from "./ErrorPage";
 import App from "./App";
 import Swap from "./Swap";
 import ConnectWallet from "./ConnectWallet";
-<<<<<<< HEAD
-import Tokens from "./Tokens"; 
-=======
 import Tokens from "./Tokens";
 import Login from "./Login";
 import SignUp from "./SignUp";
->>>>>>> feature/CRUD_utilisateur
 
 const router = createBrowserRouter([
     {
