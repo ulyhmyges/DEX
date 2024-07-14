@@ -3,10 +3,10 @@ import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import Swap from "./components/Swap";
 import Tokens from "./components/Tokens";
-import ConnectWallet from "./components/ConnectWallet";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
+import ConnectWalletEthers from "./components/ConnectWalletEthers";
 
 
 const router = createBrowserRouter([
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "connect",
-                element: <ConnectWallet />
+                element: <ConnectWalletEthers />
             },
             {
                 path: "login",

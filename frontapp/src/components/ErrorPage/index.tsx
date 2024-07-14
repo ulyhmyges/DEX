@@ -15,7 +15,8 @@ const ErrorPage = () => {
           <i>{"Error 404"}</i>
         </p>
       </div>
-      <Link to={"/home"}>Go to Home
+      <Link 
+        to={"/home"}>Go to Home
       </Link>
     </Container>
   );
