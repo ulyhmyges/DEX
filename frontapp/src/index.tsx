@@ -7,14 +7,14 @@ import {
 } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Navbar from "./Navbar";
-import ErrorPage from "./ErrorPage";
-import App from "./App";
-import Swap from "./Swap";
-import ConnectWallet from "./ConnectWallet";
-import Tokens from "./Tokens";
-import Login from "./Login";
-import SignUp from "./SignUp";
+import Navbar from "./components/Navbar";
+import ErrorPage from "./components/ErrorPage";
+import App from "./components/App";
+import Swap from "./components/Swap";
+import ConnectWallet from "./components/ConnectWallet";
+import Tokens from "./components/Tokens";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 const router = createBrowserRouter([
     {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchTokens, fetchTokenData } from './services/TokenService';
+import { fetchTokens, fetchTokenData } from '../../services/TokenService';
 import './Tokens.css'; 
 
 interface Token {
