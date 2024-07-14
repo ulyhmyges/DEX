@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const App = () => {
+const Home = () => {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ const App = () => {
     };
 
     return (
-        <div className="App">
+        <div className="Home">
             <div className="container mt-5">
                 <h1 className="mb-4">Hello, a little DEX under construction!</h1>
                 {!user.username ? (
@@ -27,7 +27,7 @@ const App = () => {
     );
 };
 
-export default App;
+export default Home;
 
 
 
