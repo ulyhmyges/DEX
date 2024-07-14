@@ -1,7 +1,11 @@
 // npx wagmi init
+// npx wagmi generate
+
 import { defineConfig } from "@wagmi/cli";
 import { react } from "@wagmi/cli/plugins";
-import "dotenv"
+import { config } from "dotenv"
+
+config()
 
 export default defineConfig({
   out: "src/WagmiGenerated.ts",

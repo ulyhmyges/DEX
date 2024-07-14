@@ -1,31 +1,30 @@
 import { getAccount } from '@wagmi/core'
 import { config } from '../../config/wagmi-config'
 import { useEffect, useState } from 'react'
+import { useReadTokenFactoryGetTokenNumber, useReadTokenFactoryGetTokens, useReadTokenFactoryMe } from '../../WagmiGenerated';
+import { WalletConnectors } from './WalletConnectors';
+import Account from './Account';
+import { useAccount } from 'wagmi';
 
 export default function ConnectWallet(){
-    const [addr, setAddr] = useState('');
-    const [chain, setChain] = useState<any>();
-
-    useEffect(() => {
-        async function getAddress(){
-            const { address, status } = getAccount(config)
-            if (!address) return <h3>No address</h3>
-            setAddr(address)
-            setChain(status)
-        }
-        getAddress()
-      
-    }, [])
+    const { data } = useReadTokenFactoryGetTokens();
+    const { isConnected, address, status, chainId } = useAccount()
   
+
+    if (isConnected) return (
+        <div>
+            <p>status: {status}</p>
+            <p>address: {address}</p>
+            <p>chainId: {chainId}</p>
+            {address && chainId && <Account address={address} chainId={chainId} />}
+        </div>
+
+    );
+
     return (
-        addr ? ( <div>
-            <p>Address: {addr}</p>
-            <p>chain: {chain}</p>
-        </div>) : (
             <div>
                 otherwise
-                {/* <WalletConnectors /> */}
+                <WalletConnectors />
             </div>
-        )
-    );
+        );
 }
