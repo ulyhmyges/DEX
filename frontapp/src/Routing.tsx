@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
 import ConnectWalletEthers from "./components/ConnectWalletEthers";
+import ConnectWallet from "./components/ConnectWallet";
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "connect",
-                element: <ConnectWalletEthers />
+                element: <ConnectWallet />
             },
             {
                 path: "login",
