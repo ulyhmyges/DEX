@@ -4,20 +4,28 @@ import { useEffect, useState } from 'react'
 
 export default function ConnectWallet(){
     const [addr, setAddr] = useState('');
+    const [chain, setChain] = useState<any>();
 
     useEffect(() => {
         async function getAddress(){
-            const { address } = getAccount(config)
+            const { address, status } = getAccount(config)
             if (!address) return <h3>No address</h3>
             setAddr(address)
+            setChain(status)
         }
         getAddress()
       
     }, [])
   
     return (
-        <div>
+        addr ? ( <div>
             <p>Address: {addr}</p>
-        </div>
+            <p>chain: {chain}</p>
+        </div>) : (
+            <div>
+                otherwise
+                {/* <WalletConnectors /> */}
+            </div>
+        )
     );
 }
