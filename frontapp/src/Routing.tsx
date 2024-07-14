@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import Swap from "./components/Swap";
@@ -7,12 +6,13 @@ import Tokens from "./components/Tokens";
 import ConnectWallet from "./components/ConnectWallet";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import Welcome from "./components/Welcome";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Navbar/>,
+        element: <Welcome/>,
         errorElement: <ErrorPage/>,
         children: [
             {
