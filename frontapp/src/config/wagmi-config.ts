@@ -10,7 +10,7 @@ export const config = createConfig({
     [holesky.id]: http(),
     [optimism.id]: http(), 
   },
-  connectors: [coinbaseWallet(), metaMask()]
+  connectors: [coinbaseWallet()]
 })
 
 // SEND TRANSACTION
