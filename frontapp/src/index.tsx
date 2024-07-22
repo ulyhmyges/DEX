@@ -1,47 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import Navbar from "./Navbar";
-import ErrorPage from "./ErrorPage";
+// index.tsx
+import React from "react";
 import App from "./App";
-import Swap from "./Swap";
-import ConnectWallet from "./ConnectWallet";
-import Tokens from "./Tokens"; 
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Navbar/>,
-        errorElement: <ErrorPage/>,
-        children: [
-            {
-                path: "home",
-                element: <App/>
-            },
-            {
-                path: "swap",
-                element: <Swap/>
-            },
-            {
-                path: "tokens",
-                element: <Tokens/>
-            },
-            {
-                path: "pools",
-                element: <h1>Pools</h1>
-            },
-            {
-                path: "connect",
-                element: <ConnectWallet />
-            },
-        ]
-    }
-]);
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -49,7 +11,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <App />
     </React.StrictMode>
 );
 

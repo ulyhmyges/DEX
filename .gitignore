@@ -3,3 +3,4 @@ images/.DS_Store
 frontapp/node_modules/
 frontapp/.env
 backend/.env
+backend/db-data/
