@@ -20,7 +20,7 @@ contract TokenFactory is AccessControl {
     }
 
     function createToken(uint256 initialSupply, string memory name, string memory symbol) public onlyRole(FACTORY_ROLE) {
-        address newToken = address(new Token(initialSupply, name, symbol));
+        address newToken = address(new Token(initialSupply, name, symbol, me));
         tokenToSupply[newToken] = initialSupply;
         deployedTokens.push(newToken);
         emit TokenCreated(initialSupply, name, symbol);
