@@ -3,7 +3,7 @@ import { mainnet, sepolia, holesky, optimism } from '@wagmi/core/chains'
 import {coinbaseWallet, metaMask} from "@wagmi/connectors"
 
 export const config = createConfig({
-  chains: [mainnet, sepolia],
+  chains: [mainnet, sepolia, holesky],
   transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
