@@ -74,7 +74,7 @@ func Cap() {
 			for j, item := range objData {
 				log.Println(j)
 				log.Println(item)
-				
+
 			}
 		}
 		for key, value := range objMap {
@@ -94,9 +94,8 @@ func main() {
 
 	routes.TokenRoutes(router)
 	routes.UserRoutes(router)
-	routes.CapMarketRoutes(router)
 	Cap()
-	
+
 	err := http.ListenAndServe(":8080", router)
 	if err != nil {
 		log.Fatal("Failed to start the server: " + err.Error())

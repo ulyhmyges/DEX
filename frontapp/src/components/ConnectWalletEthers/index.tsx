@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {ethers} from "ethers";
 import detectEthereumProvider from "@metamask/detect-provider";
+import { useAuth } from "../../AuthContext";
 
 declare let window: any;
 
@@ -15,6 +16,10 @@ const ConnectWalletEthers = () => {
     const [hasProvider, setHasProvider] = useState<boolean | null>(null);
     const initialWallet = {accounts: [], chainId: "", balance: ""};
     const [wallet, setWallet] = useState(initialWallet);
+
+    const { userId } = useAuth();
+
+    console.log("bonjour");
 
     useEffect(() => {
         const refreshAccounts = async (accounts: any) => {
@@ -80,6 +85,24 @@ const ConnectWalletEthers = () => {
         }
     }
 
+    async function updateWalletAddress(address: string) {
+    try {
+        const response = await fetch("http://localhost:8080/updateWalletAddress", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ id: userId, address }),
+        });
+        if (!response.ok) {
+            throw new Error("Failed to update wallet address");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+
+    }
+
     async function handleConnect() {
         try {
             setIsConnecting(true);
@@ -89,6 +112,8 @@ const ConnectWalletEthers = () => {
                 method: "eth_requestAccounts"
             });
             await updateWallet(accounts);
+
+            await updateWalletAddress(accounts[0]);
 
             setIsConnecting(false);
         } catch (e: any) {
