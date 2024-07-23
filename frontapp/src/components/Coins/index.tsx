@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import axios from 'axios';
-import './Tokens.css'; 
+import './Coins.css'; 
 import Coin from './Coin';
 import Columns from "./Columns";
 
@@ -15,7 +15,7 @@ interface CoinData {
     price_change_percentage_24h: number;
   }
 
-const Tokens: React.FC = () => {
+const Coins: React.FC = () => {
     const [coins, setCoins] = useState<CoinData[]>([]);
     const [search, setSearch] = useState('');
   
@@ -70,7 +70,7 @@ const Tokens: React.FC = () => {
   }
   
 
-export default Tokens;
+export default Coins;
 
 
 

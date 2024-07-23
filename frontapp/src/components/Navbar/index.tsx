@@ -39,8 +39,8 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <button className={"btn btn-light"}>
-                  <Link className="nav-link active" to={"tokens"}>
-                    Tokens
+                  <Link className="nav-link active" to={"coins"}>
+                    Coins
                   </Link>
                 </button>
               </li>
