@@ -17,25 +17,32 @@ const Tokens = () => {
   }, []);
 
   return (
-    <table className="">
-      <thead className="token-columns">
-        <TokenColumns />
-      </thead>
-      <tbody>
-        {tokens.map((token) => (
-          <Token
-            id={token.id}
-            name={token.name}
-            symbol={token.symbol}
-            initial_supply={token.initial_supply}
-            address={token.address}
-            sender={token.sender}
-            blockchain_name={token.blockchain_name}
-            tx={token.tx}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <table className="table">
+        <thead className="thead-dark">
+          <TokenColumns />
+        </thead>
+        <tbody>
+          {tokens.map((token) => (
+            <Token
+              id={token.id}
+              name={token.name}
+              symbol={token.symbol}
+              initial_supply={token.initial_supply}
+              address={token.address}
+              sender={token.sender}
+              blockchain_name={token.blockchain_name}
+              tx={token.tx}
+            />
+          ))}
+        </tbody>
+      </table>
+      <div className="create-token">
+        <button type="button" className="btn btn-warning">
+          Create
+        </button>
+      </div>
+    </div>
   );
 };
 

@@ -1,3 +1,8 @@
 .token-columns {
     color: rgb(218, 165, 32);
 }
+
+.create-token {
+    text-align: right;
+    margin: 0px auto 0px auto;
+}
