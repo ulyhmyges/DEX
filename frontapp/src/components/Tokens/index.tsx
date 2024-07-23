@@ -17,8 +17,8 @@ const Tokens = () => {
   }, []);
 
   return (
-    <table className="table">
-      <thead>
+    <table className="">
+      <thead className="token-columns">
         <TokenColumns />
       </thead>
       <tbody>

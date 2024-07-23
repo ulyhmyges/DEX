@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const TokenColumns = () => {
   return (
     <tr>
@@ -11,6 +12,7 @@ const TokenColumns = () => {
       <td>sender</td>
       <td>blockchain_name</td>
       <td>tx</td>
+      <button type="button" className="btn btn-warning">Create</button>
     </tr>
   );
 };
