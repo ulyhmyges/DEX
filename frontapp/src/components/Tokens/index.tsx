@@ -2,6 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import axios from 'axios';
 import './Tokens.css'; 
 import Coin from './Coin';
+import Columns from "./Columns";
 
 interface CoinData {
     id: string;
@@ -51,6 +52,7 @@ const Tokens: React.FC = () => {
             />
           </form>
         </div>
+        <Columns />
         {filteredCoins.map(coin => (
           <Coin
             key={coin.id}
