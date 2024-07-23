@@ -5,7 +5,8 @@ type Token struct {
 	Name   string `json:"name"`
 	Symbol string `json:"symbol"`
 	InitialSupply int `json:"initial_supply"`
+	Address string `json:"address"`
 	Sender string `json:"sender"`
-	Tx string `json:"tx"`
 	BlockchainName string `json:"blockchain_name"`
+	Tx string `json:"tx"`
 }

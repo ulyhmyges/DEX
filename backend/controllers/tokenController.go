@@ -11,9 +11,9 @@ func CreateToken(w http.ResponseWriter, r *http.Request) {
 	var token models.Token
 	json.NewDecoder(r.Body).Decode(&token)
 
-	sqlStatement := `INSERT INTO tokens (name, symbol) VALUES ($1, $2) RETURNING id`
+	sqlStatement := `INSERT INTO tokens (name, symbol, initial_supply, address, sender, blockchain_name, tx) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id`
 	id := 0
-	err := config.DB.QueryRow(sqlStatement, token.Name, token.Symbol).Scan(&id)
+	err := config.DB.QueryRow(sqlStatement, token.Name, token.Symbol, token.InitialSupply, token.Address, token.Sender, token.BlockchainName, token.Tx).Scan(&id)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -25,7 +25,7 @@ func CreateToken(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetTokens(w http.ResponseWriter, r *http.Request) {
-	rows, err := config.DB.Query("SELECT id, name, symbol FROM tokens")
+	rows, err := config.DB.Query("SELECT id, name, symbol, initial_supply, address, sender, blockchain_name, tx FROM tokens")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -35,7 +35,7 @@ func GetTokens(w http.ResponseWriter, r *http.Request) {
 	var tokens []models.Token
 	for rows.Next() {
 		var token models.Token
-		err := rows.Scan(&token.ID, &token.Name, &token.Symbol)
+		err := rows.Scan(&token.ID, &token.Name, &token.Symbol, &token.InitialSupply, &token.Address, &token.Sender, &token.BlockchainName, &token.Tx)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return

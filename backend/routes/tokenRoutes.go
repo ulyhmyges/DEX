@@ -7,7 +7,6 @@ import (
 )
 
 func TokenRoutes(router *mux.Router) {
-	router.HandleFunc("/tokens", controllers.CreateToken).Methods("POST")
-	router.HandleFunc("/tokens", controllers.GetTokens).Methods("GET")
-	router.HandleFunc("/tokens/market-data", controllers.GetTokensWithMarketData).Methods("GET")
+	router.HandleFunc("/tokens", controllers.CreateToken).Methods("POST", "OPTIONS")
+	router.HandleFunc("/tokens", controllers.GetTokens).Methods("GET", "OPTIONS")
 }
