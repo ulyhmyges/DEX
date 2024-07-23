@@ -1,13 +1,11 @@
-
+import "./Columns.css";
 
 export default function Columns(){
     return (
-        <div className='coin-container'>
+        <div className='coin-container columns'>
           <div className='coin-row'>
             <div className='coin'>
-              <p>Logo</p>
-              <h1>Name</h1>
-              <p>Symbol</p>
+              <p>Name</p>
             </div>
             <div className='coin-data'>
               <p className='coin-price'>Price</p>
