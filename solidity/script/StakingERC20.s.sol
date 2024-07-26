@@ -17,7 +17,6 @@ contract StakingERC20Script is Script {
         address myAddress = vm.envAddress("WALLET_ADDRESS");
         token = new Token(500, "BB", "BB", myAddress);
         stakingERC20 = new StakingERC20(token);
-        
 
         //stakeTokens method
         //stakingERC20.unstakeTokens(token, 30);

@@ -14,11 +14,10 @@ contract StakingERC20_deployScript is Script {
     function run() public {
         vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
         address myAddress = vm.envAddress("WALLET_ADDRESS");
-     
 
         token_factory = new TokenFactory();
         uint256 nb = token_factory.getTokenNumber();
-      
+
         console.log("tokens nb: ", nb);
         console.log("sender:", msg.sender);
         token_factory.createToken(55, "Coin", "CN");
@@ -36,7 +35,6 @@ contract StakingERC20_deployScript is Script {
         stakingERC20 = new StakingERC20(token);
         token.approve(address(stakingERC20), 30);
         console.log("allowance: ", token.allowance(myAddress, address(stakingERC20)));
-
 
         //Set time Stamp first before staking
         stakingERC20.setTimestamp(180);

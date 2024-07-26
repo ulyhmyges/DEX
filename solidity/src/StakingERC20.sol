@@ -23,7 +23,6 @@ contract StakingERC20 {
     bool public timestampSet;
     uint256 public timePeriod;
 
-
     // Token amount variables
     mapping(address => uint256) public alreadyWithdrawn;
     mapping(address => uint256) public balances;
@@ -90,7 +89,7 @@ contract StakingERC20 {
 
     /// @dev Sets the initial timestamp and calculates minimum staking period in seconds i.e. 3600 = 1 hour
     /// @param _timePeriodInSeconds amount of seconds to add to the initial timestamp i.e. we are essemtially creating the minimum staking period here
-    function setTimestamp(uint256 _timePeriodInSeconds) public onlyOwner timestampNotSet  {
+    function setTimestamp(uint256 _timePeriodInSeconds) public onlyOwner timestampNotSet {
         timestampSet = true;
         initialTimestamp = block.timestamp;
         bool b;
@@ -101,8 +100,13 @@ contract StakingERC20 {
     /// @param token, the official ERC20 token which this contract exclusively accepts.
     /// @param amount to allocate to recipient.
     function stakeTokens(IERC20 token, uint256 amount) public timestampIsSet noReentrant {
-        require(token == erc20Contract, "You are only allowed to stake the official erc20 token address which was passed into this contract's constructor");
-        require(amount <= token.balanceOf(msg.sender), "Not enough STATE tokens in your wallet, please try lesser amount");
+        require(
+            token == erc20Contract,
+            "You are only allowed to stake the official erc20 token address which was passed into this contract's constructor"
+        );
+        require(
+            amount <= token.balanceOf(msg.sender), "Not enough STATE tokens in your wallet, please try lesser amount"
+        );
         token.safeTransferFrom(msg.sender, address(this), amount);
         bool b;
         (b, balances[msg.sender]) = balances[msg.sender].tryAdd(amount);
@@ -114,7 +118,10 @@ contract StakingERC20 {
     /// @param amount - the amount to unlock (in wei)
     function unstakeTokens(IERC20 token, uint256 amount) public timestampIsSet noReentrant {
         require(balances[msg.sender] >= amount, "Insufficient token balance, try lesser amount");
-        require(token == erc20Contract, "Token parameter must be the same as the erc20 contract address which was passed into the constructor");
+        require(
+            token == erc20Contract,
+            "Token parameter must be the same as the erc20 contract address which was passed into the constructor"
+        );
         if (block.timestamp >= timePeriod) {
             bool b;
             (b, alreadyWithdrawn[msg.sender]) = alreadyWithdrawn[msg.sender].tryAdd(amount);

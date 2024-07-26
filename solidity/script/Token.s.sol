@@ -17,7 +17,7 @@ contract TokenScript is Script {
         console.log("balance: of sender", token.balanceOf(msg.sender));
         console.log("totalSupply: ", token.totalSupply());
         console.log("Token Symbol: ", token.symbol());
-        
+
         vm.stopBroadcast();
     }
 }
