@@ -39,8 +39,8 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <button className={"btn btn-light"}>
-                  <Link className="nav-link active" to={"tokens"}>
-                    Tokens
+                  <Link className="nav-link active" to={"coins"}>
+                    Coins
                   </Link>
                 </button>
               </li>
@@ -53,23 +53,19 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <button className={"btn btn-light"}>
+                  <Link className="nav-link active" to={"tokens"}>
+                    Tokens
+                  </Link>
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className={"btn btn-light"}>
                   <Link className="nav-link active" to={"connect"}>
                     Connect
                   </Link>
                 </button>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>

@@ -9,7 +9,6 @@ type IProps = {
 }
 
 export default function Account(props: IProps) {
-    //const { address } = useAccount();
     const { disconnect } = useDisconnect();
     const { data: ensName } = useEnsName({ address: props.address });
     const { data: ensAvatar } = useEnsAvatar({ name: ensName! });

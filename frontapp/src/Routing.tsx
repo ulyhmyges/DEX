@@ -2,12 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import Swap from "./components/Swap";
-import Tokens from "./components/Tokens";
+import Coins from "./components/Coins";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
 import ConnectWalletEthers from "./components/ConnectWalletEthers";
 import ConnectWallet from "./components/ConnectWallet";
+import Tokens from "./components/Tokens";
 
 
 const router = createBrowserRouter([
@@ -25,12 +26,16 @@ const router = createBrowserRouter([
                 element: <Swap/>
             },
             {
-                path: "tokens",
-                element: <Tokens/>
+                path: "coins",
+                element: <Coins/>
             },
             {
                 path: "pools",
                 element: <h1>Pools</h1>
+            },
+            {
+                path: "tokens",
+                element: <Tokens />
             },
             {
                 path: "connect",

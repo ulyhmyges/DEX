@@ -5,6 +5,7 @@ import { useReadTokenFactoryGetTokenNumber, useReadTokenFactoryGetTokens, useRea
 import { WalletConnectors } from './WalletConnectors';
 import Account from './Account';
 import { useAccount } from 'wagmi';
+import "./ConnectWallet.css";
 
 export default function ConnectWallet(){
     const { data } = useReadTokenFactoryGetTokens();
@@ -23,7 +24,7 @@ export default function ConnectWallet(){
 
     return (
             <div>
-                otherwise
+                <h4 className='connect-wallet'>Connect a wallet</h4>
                 <WalletConnectors />
             </div>
         );

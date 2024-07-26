@@ -1,0 +1,9 @@
+.wallet-connectors {
+    color: rgb(218, 165, 32);
+
+  }
+
+.wallet-connectors:active {
+    color: rgb(218, 165, 32);
+    background-color: rgb(218, 165, 32); /* Optional background color when active */
+}
